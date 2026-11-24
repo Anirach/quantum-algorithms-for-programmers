@@ -6,12 +6,12 @@ Learn what interference does, why Grover is quadratic, how Shor extracts a perio
 
 ## Install and run
 
-Use Python 3.11–3.13 with pip and Git. Verified locally with Python 3.13, Qiskit 2.6.2, Aer 0.18.4, NumPy 2.5.5 and SciPy 1.18.1 on 24 November 2026. The direct dependencies are pinned in `requirements.txt`; `requirements-lock.txt` records the full locally tested environment. Platform-specific wheels and later transitive dependencies may produce small numerical differences. Use a virtual environment rather than changing a system Python.
+Use Python 3.12–3.13 with pip and Git. Verified locally with Python 3.13, Qiskit 2.6.2, Aer 0.18.4, NumPy 2.5.5 and SciPy 1.18.1 on 24 November 2026. The direct dependencies are pinned in `requirements.txt`; `requirements-lock.txt` records the full locally tested environment. Platform-specific wheels and later transitive dependencies may produce small numerical differences. Use a virtual environment rather than changing a system Python.
 
 ```bash
 git clone https://github.com/Anirach/quantum-algorithms-for-programmers.git
 cd quantum-algorithms-for-programmers
-git checkout v1.0.0
+git checkout v1.0.1
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -71,7 +71,7 @@ Fixed simulator and transpiler seeds make the recorded run repeatable in the tes
 | Problem | What to check |
 |---|---|
 | `No module named qiskit` | Activate the virtual environment and use its `python -m pip`. |
-| Aer installation cannot find a wheel | Use a supported 64-bit Python 3.11–3.13 platform; inspect pip's platform error before trying a source build. |
+| Aer installation cannot find a wheel | Use a supported 64-bit Python 3.12–3.13 platform; inspect pip's platform error before trying a source build. |
 | A count string looks reversed | Read qubit 0 from the right and check the explicit measurement-to-classical-bit mapping. |
 | Counts differ slightly | Compare probabilities and shot uncertainty; check dependency versions and seeds. |
 | QAOA takes longer | Training includes 60 optimization runs. For exploration call `optimize(p, restarts=2)`; this changes the experiment and may lower quality. |
